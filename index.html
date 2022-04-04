@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<title>Vue.js Todo-list</title>
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="text-light background">
+	<div id="app" class="container card"><!--har klassen app för att det appen vue ska kontrollera ska vara här i-->
+		<h1>Vue.js Simple ToDo's</h1>
+
+		<!--V-MODEL binding =   gör så att rutan uppdateras med den text du fyller i och som skickas in-->
+		<!--@submit.prevent = e.preventDefault fast vi kan smidigt lägga det här inne i vue-->
+		<div class="mb-3">
+			<form @submit.prevent="createNewTodo">
+				<div class="input-group">
+					<input
+						type="text"
+						class="form-control"
+						placeholder="Add ToDo"
+						v-model="newTodoTitleInput"
+					/>    
+					<button
+						type="submit"
+						class="btn btn-primary"
+						v-bind:disabled="!newTodoIsValid"
+					>   <!--kör disabled på knappen men binder den till newTodoIsValid för att den ska vara disdsabled BARA då vi inte uppfyller villkoren för 3 tecken ifyllda i inputfältet-->
+				
+						Add ToDo
+					</button>
+				</div>
+				<div class="validation-error">
+					<span
+						class="small text-danger"
+						v-if="newTodoTitleInput.length > 0 && newTodoTitleInput.length < 3"
+					>
+						Please enter at least 3 characters here.
+					</span><!--vi vill bara visa texten om man inte fyllt i 3 tecken-->
+				</div>
+			</form>
+		</div>
+
+		<div id="todos-container" v-show="todos.length"><!--här ska vi lägga till logik för att kunna ta bort rutan när vi "har en längd"/alltså; nör vi har en todo-lista/saker i listan-->
+				
+			<h2>Your ToDo's</h2>
+
+			<!--v-for = for each item in the li-todo-list så om todo är completed så upprepa li-taggen för vsarje ska i listan-->
+			<!--done-klassen ska finnas på li om den är false-->
+			<!--:class="item.completed ? 'completed' : ''"-->
+
+			<ul class="todolist">
+				<li
+					v-for="item in unfinishedTodos"
+				>
+						<span @click="toggleTodo(item)" class="todo-title">
+							{{ item.title }}
+						</span>
+						<span @click="deleteTodo(item)" class="todo-delete"></span>
+				</li>
+			</ul>
+
+			<p class="text-muted small">You got {{ unfinishedTodosCount }} todo's left</p>
+
+			<h3>Done:</h3>
+			<ul class="todolist">
+				<li
+					v-for="item in finishedTodos"
+					class="done"
+				>
+						<span @click="toggleTodo(item)" class="todo-title">
+							{{ item.title }}
+						</span>
+						<span @click="deleteTodo(item)" class="todo-delete"></span>
+				</li><!--kallar den deleteTodo-->
+			</ul>
+		</div>
+
+		<img 
+			src="https://media1.giphy.com/media/dV8K4Rwzeuvn3JyJO9/200w.gif?cid=82a1493baj1dqol4w5y21arhbnwl23jz7ha1f1l673k4z6mk&rid=200w.gif&ct=g"
+			class="img-fluid"
+			v-show="!todos.length"
+		/>
+	</div>
+
+	<!-- Vue 3 -->
+	<script src="https://unpkg.com/vue@3"></script>
+
+	<!-- App -->
+	<script src="app.js"></script>
+</body>
+</html>
