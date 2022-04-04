@@ -13,6 +13,7 @@ A ToDo List where you can create ToDo´s and remove items in the list when you´
 
 - [Assignment](#assignment)
 - [Tools](#tools)
+- [Printscreen](#printscreen)
 - [Preview](#preview)
 
 ## Assignment
@@ -24,6 +25,8 @@ A ToDo List where you can create ToDo´s and remove items in the list when you´
 
 - VS Code
 
-## Preview
+## Printscreen
+<img src="img">
 
-<img src="img/Screen-movie.mov" width=100%>
+## Preview
+<!--<img src="img/Screen-movie.mov" width=100%> ->
