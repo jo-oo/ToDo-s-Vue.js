@@ -89,12 +89,14 @@
   }
 
 
-
-
-
-
 h1, h2, h3, h4, h5, h6 {
 	margin-bottom: 0.75em;
+}
+
+img {
+	border-color: white;
+	border: 2rem;
+	border-radius: 20px;
 }
 
 hr {
@@ -103,6 +105,12 @@ hr {
 	margin-bottom: 1.5rem;
 	width: 100%;
 }
+
+ul {
+    list-style-type: none;
+}
+
+
 
 #app {
 	color: rgb(166, 119, 253);
@@ -113,10 +121,14 @@ hr {
 	align-items: center;
 }
 
+.contact {
+	padding: 2rem;
+	background-color: brown;
+}
 
 .btn-primary {
     color: white;
-    background-color: rgba(127, 81, 255, 0.966);
+    background-color: rgba(3, 2, 3, 0.966);
     border: 2px solid  rgb(199, 170, 253);
 }
 
@@ -133,16 +145,6 @@ hr {
 	border-radius: 25px;
 }
 
-img {
-	border-color: white;
-	border: 2rem;
-	border-radius: 20px;
-}
-
-ul {
-    list-style-type: none;
-}
-
 .form-control {
 	background-color: rgb(250, 239, 249);
     border: 2px solid rgb(199, 170, 253);
@@ -150,10 +152,6 @@ ul {
 
 .form-control:focus {
     border-color: rgb(199, 170, 253);
-}
-
-.validation-error {
-	min-height: 1.5em;
 }
 
 .todolist .done .todo-title {
@@ -164,4 +162,8 @@ ul {
 .todolist .todo-delete {
 	cursor: pointer;
 	margin-left: 0.5em;
+}
+
+.validation-error {
+	min-height: 1.5em;
 }
