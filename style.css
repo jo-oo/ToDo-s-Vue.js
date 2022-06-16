@@ -123,7 +123,9 @@ ul {
 
 .contact {
 	padding: 2rem;
-	background-color: brown;
+	background-color: rgb(213, 205, 255);
+	margin-top: 2rem;
+	border-radius: 3%;
 }
 
 .btn-primary {
