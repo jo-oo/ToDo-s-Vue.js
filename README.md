@@ -26,7 +26,7 @@ A ToDo List where you can create ToDo´s and remove items in the list when you´
 - VS Code
 
 ## Printscreen
-<img src="img">
+<img src="https://github.com/joo-oo/ktv/blob/main/public/assets/printScreen.png" width=100%>
 
 ## Preview
-<!--<img src="img/Screen-movie.mov" width=100%> ->
+
